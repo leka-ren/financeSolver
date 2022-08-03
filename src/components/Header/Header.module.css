@@ -1,0 +1,14 @@
+.content {
+  display: flex;
+  flex-direction: column;
+  margin: 20px 0;
+}
+
+.text {
+  font-family: "DotGothic16", Arial, Helvetica, sans-serif;
+  margin: 10px 0;
+}
+
+.subtitle {
+  opacity: 0.5;
+}

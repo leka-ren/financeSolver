@@ -1,0 +1,15 @@
+.item {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border-bottom: solid rgb(206, 206, 206);
+  width: 320px;
+}
+
+.text {
+  font-family: "Courier New", Courier, monospace;
+}
+
+.text + .text {
+  margin-left: 20px;
+}
