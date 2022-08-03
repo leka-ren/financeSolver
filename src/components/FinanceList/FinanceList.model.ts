@@ -1,20 +1,23 @@
 import { createDomain } from "effector";
-
-// const fs = require("fs");
+import { FinanceItemProps } from "../../types/financeItemProps";
 
 export function getFinanceItems() {
-  //   let financeJson = fs.readFileSync("../data/financeInfo.json");
   let financeJson = new File([""], "../data/financeInfo.json");
   console.log(financeJson);
-  //   let financeItemsParsed = JSON.parse(financeJson);
   const kek = {
     data: [
-      { name: "Медстраховка", price: 100 },
-      { name: "Домой", price: 100 },
-      { name: "Отложить", price: 100 },
-      { name: "Визы", price: 100 },
-      { name: "Еда", price: 100 },
-      { name: "Скутер", price: 100 },
+      { id: "1", name: "Медстраховка", price: "0" },
+      { id: "2", name: "Домой", price: "0" },
+      { id: "3", name: "Отложить", price: "0" },
+      { id: "4", name: "Визы", price: "0" },
+      { id: "5", name: "Еда", price: "0" },
+      { id: "6", name: "Скутер", price: "0" },
+      { id: "1", name: "Медстраховка", price: "0" },
+      { id: "2", name: "Домой", price: "0" },
+      { id: "3", name: "Отложить", price: "0" },
+      { id: "4", name: "Визы", price: "0" },
+      { id: "5", name: "Еда", price: "0" },
+      { id: "6", name: "Скутер", price: "0" },
     ],
   };
 
@@ -29,9 +32,6 @@ const financeListDomain = createDomain();
 export const addItemInList = financeListDomain.createEvent();
 
 // Store
-export const $financeItems = financeListDomain.createStore<
-  Array<{
-    name: string;
-    price: number;
-  }>
->(getFinanceItems());
+export const $financeItems = financeListDomain.createStore<FinanceItemProps[]>(
+  getFinanceItems()
+);

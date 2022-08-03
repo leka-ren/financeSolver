@@ -11,7 +11,7 @@ export const FinanceList: ComponentType = () => {
   return (
     <div className={style.content}>
       {financeItems.map((el) => (
-        <FinanceItem name={el.name} price={el.price} />
+        <FinanceItem name={el.name} price={el.price} id={el.id}/>
       ))}
     </div>
   );

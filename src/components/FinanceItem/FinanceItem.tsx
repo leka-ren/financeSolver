@@ -1,9 +1,10 @@
 import { ComponentType } from "react";
-import { FinanceItemProps } from "./FinanceItem.types";
+import { FinanceItemProps } from "../../types/financeItemProps";
 
 import style from "./FinanceItem.module.css";
 
 export const FinanceItem: ComponentType<FinanceItemProps> = ({
+  id,
   name,
   price,
 }) => {
