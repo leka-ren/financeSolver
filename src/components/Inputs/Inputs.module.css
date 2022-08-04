@@ -4,7 +4,7 @@
   width: 100%;
   justify-content: center;
   margin: 20px 0;
-  padding: 0 20px;
+  max-width: 500px;
 }
 
 .item {
@@ -18,13 +18,18 @@
 }
 
 .input {
-  width: 250px;
   border-bottom: solid rgb(255, 229, 229) 1px;
+  outline: none;
 }
 
+.input::-webkit-outer-spin-button,
+.input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}s
+
 .button {
-  width: 50px;
-  border: solid rgb(255, 229, 229);
+  border: solid rgb(255, 229, 229) 1px;
   cursor: pointer;
 }
 

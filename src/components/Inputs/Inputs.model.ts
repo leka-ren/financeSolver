@@ -21,5 +21,5 @@ export const $inputCategory = inputDomain
 
 export const $inputPrice = inputDomain
   .createStore<number | string>("")
-  .on(setInputPrice, (_, input) => input)
+  .on(setInputPrice, (_, input) => Number(input))
   .reset(submit);

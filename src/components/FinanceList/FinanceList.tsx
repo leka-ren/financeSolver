@@ -1,8 +1,8 @@
 import { useStore } from "effector-react";
 import { ComponentType } from "react";
+import { $financeItems } from "../../api/getFinanceItems";
 
 import { FinanceItem } from "../FinanceItem/FinanceItem";
-import { $financeItems } from "./FinanceList.model";
 
 import style from "./FinanceList.module.css";
 
@@ -11,7 +11,7 @@ export const FinanceList: ComponentType = () => {
   return (
     <div className={style.content}>
       {financeItems.map((el) => (
-        <FinanceItem name={el.name} price={el.price} id={el.id}/>
+        <FinanceItem key={el.id} name={el.name} price={el.price} id={el.id} />
       ))}
     </div>
   );

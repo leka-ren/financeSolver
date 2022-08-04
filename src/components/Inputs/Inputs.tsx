@@ -25,7 +25,7 @@ export const Inputs: ComponentType = () => {
 
       <input
         className={cx(style.item, style.input)}
-        type="text"
+        type="number"
         placeholder="сумма"
         onChange={inputPriceHandler}
       />

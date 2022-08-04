@@ -1,4 +1,4 @@
-{
+export const finanseDefaultData = {
   "data": [
     { "id": "1", "name": "Медстраховка", "price": "0" },
     { "id": "2", "name": "Домой", "price": "0" },

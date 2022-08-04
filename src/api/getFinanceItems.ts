@@ -1,8 +1,7 @@
-const fs = require("fs");
+import { createStore } from "effector";
+import { finanseDefaultData } from "../data/financeInfo";
+import { FinanceItemProps } from "../types/financeItemProps";
 
-export function getFinanceItems() {
-  let financeJson = fs.readFileSync("../data/financeInfo.json");
-  let financeItemsParsed = JSON.parse(financeJson);
-
-  return financeItemsParsed.data;
-}
+export const $financeItems = createStore<FinanceItemProps[]>(
+  finanseDefaultData.data
+);
