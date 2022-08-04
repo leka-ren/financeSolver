@@ -16,17 +16,18 @@ export const FinanceItem: ComponentType<FinanceItemProps> = ({
   const changeItemPriceHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
     const itemChangeData = {
       id,
-      price: Number(e.target.value),
+      price: Number(e.target.textContent),
     };
     itemPriceChange(itemChangeData);
   };
   const changeItemNameHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
     const itemChangeData = {
       id,
-      name: e.target.value || "",
+      name: e.target.textContent || "",
     };
     itemNameChange(itemChangeData);
   };
+
   return (
     <div
       onDoubleClick={() => setChangeMod(false)}
@@ -39,9 +40,10 @@ export const FinanceItem: ComponentType<FinanceItemProps> = ({
         type="text"
         value={name}
       />
+
       <input
         disabled={changeMod}
-        className={cx(style.input, style.text)}
+        className={cx(style.input, style.text, style.inputNumber)}
         onChange={changeItemPriceHandler}
         type="number"
         value={price}

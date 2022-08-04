@@ -1,0 +1,16 @@
+.content {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  max-width: 500px;
+  margin: 20px auto;
+}
+
+.input {
+  border: none;
+  background-color: transparent;
+  width: 100%;
+  color: rgb(255, 229, 229);
+  font-size: 20px;
+  text-align: center;
+}

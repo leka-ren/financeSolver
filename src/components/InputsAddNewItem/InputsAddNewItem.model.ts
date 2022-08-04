@@ -10,7 +10,7 @@ const inputDomain = createDomain();
 
 // Event
 export const setInputCategory = inputDomain.createEvent<string>();
-export const setInputPrice = inputDomain.createEvent<string>();
+export const setInputPrice = inputDomain.createEvent<string | number>();
 export const submit = inputDomain.createEvent();
 
 // Store

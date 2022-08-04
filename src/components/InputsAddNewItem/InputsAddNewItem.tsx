@@ -1,16 +1,16 @@
 import { ComponentType } from "react";
 import cx from "classnames";
 
-import { setInputCategory, setInputPrice } from "./Inputs.model";
+import { setInputCategory, setInputPrice } from "./InputsAddNewItem.model";
 
-import style from "./Inputs.module.css";
+import style from "./InputsAddNewItem.module.css";
 
 export const Inputs: ComponentType = () => {
-  const categoryInputHandler = (event: React.FormEvent<HTMLInputElement>) => {
-    setInputCategory(event.currentTarget.value);
+  const categoryInputHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setInputCategory(e.target.textContent || '');
   };
-  const inputPriceHandler = (event: React.FormEvent<HTMLInputElement>) => {
-    const price = event.currentTarget.value;
+  const inputPriceHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const price = Number(e.target.textContent) || 0;
     setInputPrice(price);
   };
 
