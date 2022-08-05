@@ -1,16 +1,42 @@
 .content {
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
   width: 100%;
   max-width: 500px;
   margin: 20px auto;
 }
 
-.input {
-  border: none;
-  background-color: transparent;
+.item {
   width: 100%;
+}
+
+.text {
+  font-family: "DotGothic16", Arial, Helvetica, sans-serif;
   color: rgb(255, 229, 229);
   font-size: 20px;
   text-align: center;
+}
+
+.input {
+  border: none;
+  background-color: transparent;
+  width: 50%;
+}
+
+.input::-webkit-outer-spin-button,
+.input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.inputContent {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.currancyName {
+  margin: auto 0;
+  padding: 0;
 }

@@ -14,11 +14,16 @@ export const FinanceItem: ComponentType<FinanceItemProps> = ({
   const [changeMod, setChangeMod] = useState(true);
 
   const changeItemPriceHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const itemChangeData = {
-      id,
-      price: Number(e.target.textContent),
-    };
-    itemPriceChange(itemChangeData);
+    const value = e.currentTarget.value;
+    const regExp = (/\d+?(\.\d+)/g)
+    if (value.match(regExp)) {
+      console.log(value);
+      const itemChangeData = {
+        id,
+        price: Number(value),
+      };
+      itemPriceChange(itemChangeData);
+    }
   };
   const changeItemNameHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
     const itemChangeData = {
@@ -37,7 +42,6 @@ export const FinanceItem: ComponentType<FinanceItemProps> = ({
         disabled={changeMod}
         className={cx(style.input, style.text)}
         onChange={changeItemNameHandler}
-        type="text"
         value={name}
       />
 
@@ -45,7 +49,6 @@ export const FinanceItem: ComponentType<FinanceItemProps> = ({
         disabled={changeMod}
         className={cx(style.input, style.text, style.inputNumber)}
         onChange={changeItemPriceHandler}
-        type="number"
         value={price}
       />
     </div>
