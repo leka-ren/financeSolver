@@ -11,7 +11,7 @@ export const financeItemPriceChange = financeItemChangeDomain.createEvent();
 export const setChangeMod = financeItemChangeDomain.createEvent();
 export const itemPriceChange = financeItemChangeDomain.createEvent<{
   id: string | number;
-  price: number;
+  price: number | string;
 }>();
 export const itemNameChange = financeItemChangeDomain.createEvent<{
   id: string | number;

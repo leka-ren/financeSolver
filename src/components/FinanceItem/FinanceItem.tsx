@@ -15,12 +15,10 @@ export const FinanceItem: ComponentType<FinanceItemProps> = ({
 
   const changeItemPriceHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.currentTarget.value;
-    const regExp = (/\d+?(\.\d+)/g)
-    if (value.match(regExp)) {
-      console.log(value);
+    if (!isNaN(Number(value))) {
       const itemChangeData = {
         id,
-        price: Number(value),
+        price: value,
       };
       itemPriceChange(itemChangeData);
     }
