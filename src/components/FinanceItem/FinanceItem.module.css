@@ -1,0 +1,45 @@
+.item {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border-bottom: solid rgb(206, 206, 206) 1px;
+  width: 100%;
+  max-width: 500px;
+}
+
+.text {
+  font-family: "DotGothic16", Arial, Helvetica, sans-serif;
+  color: rgb(255, 229, 229);
+  font-size: 15px;
+}
+
+.text + .text {
+  margin-left: 20px;
+}
+
+.input {
+  padding: 10px 10px;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  width: 100%;
+}
+
+.input:disabled {
+  opacity: 1;
+}
+
+.input::-webkit-outer-spin-button,
+.input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.inputActive {
+  border: solid rgb(206, 206, 206) 1px;
+}
+
+.inputNumber {
+  max-width: 80px;
+  text-align: right;
+}
