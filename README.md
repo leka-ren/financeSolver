@@ -1,3 +1,3 @@
-* Pet project
+# Finance Solwer
 
-** Finance Solwer created for track self finance
+Pet project created for track self finance
