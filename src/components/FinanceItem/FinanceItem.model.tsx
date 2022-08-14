@@ -13,9 +13,9 @@ export const itemPriceChange = financeItemChangeDomain.createEvent<{
   id: string | number;
   price: number | string;
 }>();
-export const itemNameChange = financeItemChangeDomain.createEvent<{
+export const itemCategoryChange = financeItemChangeDomain.createEvent<{
   id: string | number;
-  name: string;
+  category: string;
 }>();
 
 // Store
@@ -39,12 +39,12 @@ sample({
 });
 
 sample({
-  clock: itemNameChange,
+  clock: itemCategoryChange,
   source: $financeItems,
   fn(src, clk) {
     const changedFinanceItems = src.map((el) => {
       if (el.id === clk.id) {
-        el.name = clk.name;
+        el.category = clk.category;
       }
       return el;
     });

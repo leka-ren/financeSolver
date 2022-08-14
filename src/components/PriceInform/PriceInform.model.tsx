@@ -1,16 +1,22 @@
 import { combine, createDomain } from "effector";
-import { $financeItems } from "../../api/getFinanceItems";
+import connectLocalStorage from "effector-localstorage";
 
+import { $financeItems } from "../../api/getFinanceItems";
 // Domain
 const priceInformDomain = createDomain();
 
 // Events
 export const getEuro = priceInformDomain.createEvent<number | string>();
 
+
+const euroLocalStorage = connectLocalStorage("euro").onError((e) =>
+  console.error("LOCAL STORAGE PROBLEM euro:", e)
+);
+
 // Store
 
 export const $euro = priceInformDomain
-  .createStore<string | number>("")
+  .createStore<string | number>(euroLocalStorage.init(""))
   .on(getEuro, (_, euro) => euro);
 
 export const $allExpenses = combine($financeItems, (financeItems) => {
@@ -26,3 +32,6 @@ export const $accountBalance = combine($euro, $allExpenses, (euro, allExp) => {
   const balance = idr - allExp;
   return balance;
 });
+
+// Watcher
+$euro.watch(euroLocalStorage)
