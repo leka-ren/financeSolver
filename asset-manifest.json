@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/financeSolwer/static/css/main.87a1748f.css",
+    "main.js": "/financeSolwer/static/js/main.3c2a2c2e.js",
+    "static/media/DotGothic16-Regular.ttf": "/financeSolwer/static/media/DotGothic16-Regular.7317ef6fed091a7e2f39.ttf",
+    "index.html": "/financeSolwer/index.html",
+    "main.87a1748f.css.map": "/financeSolwer/static/css/main.87a1748f.css.map",
+    "main.3c2a2c2e.js.map": "/financeSolwer/static/js/main.3c2a2c2e.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.87a1748f.css",
+    "static/js/main.3c2a2c2e.js"
+  ]
+}
