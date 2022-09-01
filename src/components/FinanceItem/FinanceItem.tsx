@@ -4,11 +4,12 @@ import cx from "classnames";
 import { FinanceItemProps } from "../../types/financeItemProps";
 
 import style from "./FinanceItem.module.css";
-import { itemNameChange, itemPriceChange } from "./FinanceItem.model";
+import { itemCategoryChange, itemPriceChange } from "./FinanceItem.model";
+import { removeItem } from "../../api/getFinanceItems";
 
 export const FinanceItem: ComponentType<FinanceItemProps> = ({
   id,
-  name,
+  category,
   price,
 }) => {
   const [changeMod, setChangeMod] = useState(true);
@@ -26,9 +27,9 @@ export const FinanceItem: ComponentType<FinanceItemProps> = ({
   const changeItemNameHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
     const itemChangeData = {
       id,
-      name: e.target.textContent || "",
+      category: e.target.value || "",
     };
-    itemNameChange(itemChangeData);
+    itemCategoryChange(itemChangeData);
   };
 
   return (
@@ -36,11 +37,17 @@ export const FinanceItem: ComponentType<FinanceItemProps> = ({
       onDoubleClick={() => setChangeMod(false)}
       className={cx(style.item, !changeMod && style.inputActive)}
     >
+      <button
+        className={cx(style.text, style.deleteBtn)}
+        onClick={() => removeItem(id)}
+      >
+        D
+      </button>
       <input
         disabled={changeMod}
         className={cx(style.input, style.text)}
         onChange={changeItemNameHandler}
-        value={name}
+        value={category}
       />
 
       <input

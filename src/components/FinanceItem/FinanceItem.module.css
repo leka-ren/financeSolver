@@ -1,4 +1,5 @@
 .item {
+  position: relative;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -11,10 +12,6 @@
   font-family: "DotGothic16", Arial, Helvetica, sans-serif;
   color: rgb(255, 229, 229);
   font-size: 15px;
-}
-
-.text + .text {
-  margin-left: 20px;
 }
 
 .input {
@@ -42,4 +39,13 @@
 .inputNumber {
   max-width: 80px;
   text-align: right;
+}
+
+.deleteBtn {
+  color: red;
+  border: none;
+  background-color: transparent;
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
 }

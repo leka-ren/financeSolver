@@ -1,16 +1,16 @@
 import { ComponentType } from "react";
 import cx from "classnames";
 
-import { setInputCategory, setInputPrice } from "./InputsAddNewItem.model";
+import { setInputCategory, setInputPrice, submit } from "./InputsAddNewItem.model";
 
 import style from "./InputsAddNewItem.module.css";
 
 export const Inputs: ComponentType = () => {
   const categoryInputHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setInputCategory(e.target.textContent || '');
+    setInputCategory(e.target.value || '');
   };
   const inputPriceHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const price = Number(e.target.textContent) || 0;
+    const price = Number(e.target.value) || 0;
     setInputPrice(price);
   };
 
@@ -30,7 +30,7 @@ export const Inputs: ComponentType = () => {
         onChange={inputPriceHandler}
       />
 
-      <button className={cx(style.item, style.button)}>клик</button>
+      <button className={cx(style.item, style.button)} onClick={() => submit()}>клик</button>
     </div>
   );
 };
