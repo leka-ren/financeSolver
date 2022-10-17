@@ -20,7 +20,6 @@
 
 .input {
   border-bottom: solid rgb(255, 229, 229) 1px;
-  outline: none;
   width: 100%;
   border-radius: 0;
 }
@@ -40,8 +39,11 @@ input::placeholder {
   border: solid rgb(255, 229, 229) 1px;
   cursor: pointer;
   font-size: 20px;
+  box-shadow: 3px 3px rgba(0, 128, 128, 0.707);
 }
 
 .button:hover {
-  opacity: 0.5;
+  transform: translate(1px, 1px);
+  box-shadow: 0px 0px rgba(0, 128, 128, 0);
+  transition: all 0.2s ease-in;
 }

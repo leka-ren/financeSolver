@@ -5,7 +5,7 @@ import { FinanceItemProps } from "../../types/financeItemProps";
 
 import style from "./FinanceItem.module.css";
 import { itemCategoryChange, itemPriceChange } from "./FinanceItem.model";
-import { removeItem } from "../../api/getFinanceItems";
+import { removeItem } from "../../api/getFinance/getFinanceItems";
 
 export const FinanceItem: ComponentType<FinanceItemProps> = ({
   id,

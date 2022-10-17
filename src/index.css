@@ -12,3 +12,7 @@ body {
   background-color: #005151;
   color: rgb(255, 229, 229);
 }
+
+input {
+  outline: none;
+}
