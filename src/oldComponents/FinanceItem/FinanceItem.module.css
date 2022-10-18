@@ -3,14 +3,14 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  border-bottom: solid rgb(206, 206, 206) 1px;
+  border-bottom: solid #ffe5e5 1px;
   width: 100%;
   max-width: 500px;
 }
 
 .text {
   font-family: "DotGothic16", Arial, Helvetica, sans-serif;
-  color: rgb(255, 229, 229);
+  color: #ffe5e5;
   font-size: 15px;
 }
 
@@ -32,7 +32,7 @@
 }
 
 .inputActive {
-  border: solid rgb(206, 206, 206) 1px;
+  border: solid #ffe5e5 1px;
 }
 
 .inputNumber {

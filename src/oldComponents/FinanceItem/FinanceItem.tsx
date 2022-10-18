@@ -1,4 +1,4 @@
-import { ComponentType, useState } from "react";
+import { ComponentType } from "react";
 import cx from "classnames";
 
 import { FinanceItemProps } from "../../types/financeItemProps";
