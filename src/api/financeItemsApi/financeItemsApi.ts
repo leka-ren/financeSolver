@@ -29,8 +29,6 @@ export const $financeItems = financeItemsDomain
   .createStore<FinanceItemProps[]>([])
   .on(getFinanceItemsFx.doneData, (_, data) => data.data)
   .on(postFinanceItemFx.doneData, (store, newItem) => {
-    console.log(newItem);
-    //@ts-ignore
     store.push(newItem.data);
     return [...store];
   })

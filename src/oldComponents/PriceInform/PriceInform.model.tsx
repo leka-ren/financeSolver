@@ -1,6 +1,6 @@
 import { combine, createDomain } from "effector";
 
-import { $financeItems } from "../../api/getFinance/getFinanceItems";
+import { $financeItems } from "../../api/financeItemsApi/financeItemsApi";
 // Domain
 const priceInformDomain = createDomain();
 

@@ -1,6 +1,6 @@
 import { useStore } from "effector-react";
 import { ComponentType } from "react";
-import { $financeItems } from "../../api/getFinance/getFinanceItems";
+import { $financeItems } from "../../api/financeItemsApi/financeItemsApi";
 
 import { FinanceItem } from "../FinanceItem/FinanceItem";
 

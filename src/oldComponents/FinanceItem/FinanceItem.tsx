@@ -4,7 +4,7 @@ import cx from "classnames";
 import { FinanceItemProps } from "../../types/financeItemProps";
 
 import style from "./FinanceItem.module.css";
-import { removeItem } from "../../api/getFinance/getFinanceItems";
+import { removeItem } from "../../api/financeItemsApi/financeItemsApi";
 
 export const FinanceItem: ComponentType<FinanceItemProps> = ({
   id,

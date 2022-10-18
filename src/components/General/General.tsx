@@ -5,6 +5,7 @@ import { Header } from "../Header/Header";
 
 import style from "./General.module.css";
 import AddNewItem from "../AddNewItem/AddNewItem";
+import { CurrencyExchangeInputs } from "../CurrencyExchangeInputs/CurrencyExchangeInputs";
 
 export const General: ComponentType = () => {
   useEffect(() => {
@@ -14,6 +15,7 @@ export const General: ComponentType = () => {
   return (
     <div className={style.page}>
       <Header />
+      <CurrencyExchangeInputs />
       <AddNewItem />
     </div>
   );

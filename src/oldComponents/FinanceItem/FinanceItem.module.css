@@ -10,6 +10,7 @@
 
 .text {
   font-family: "DotGothic16", Arial, Helvetica, sans-serif;
+  font-weight: 100;
   color: #ffe5e5;
   font-size: 15px;
 }

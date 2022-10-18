@@ -1,5 +1,5 @@
 import { combine, createDomain, sample } from "effector";
-import { addFinanceItems } from "../../api/getFinance/getFinanceItems";
+import { addFinanceItems } from "../../api/financeItemsApi/financeItemsApi";
 import { FinanceItemProps } from "../../types/financeItemProps";
 
 const addNewItemDomain = createDomain();
@@ -38,7 +38,6 @@ export const $newItemValue = combine(
 );
 
 sample({
-  //@ts-ignore
   clock: submit,
   source: $newItemValue,
   filter: (src, _) => !!(src.category && src.price),

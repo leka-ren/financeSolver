@@ -6,6 +6,7 @@
 
 .text {
   font-family: "DotGothic16", Arial, Helvetica, sans-serif;
+  font-weight: 100;
   margin: 10px 0;
   color: #ffe5e5;
 }

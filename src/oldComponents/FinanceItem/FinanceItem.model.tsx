@@ -1,5 +1,5 @@
 import { createDomain, sample } from "effector";
-import { $financeItems } from "../../api/getFinance/getFinanceItems";
+import { $financeItems } from "../../api/financeItemsApi/financeItemsApi";
 
 // Domain
 const financeItemChangeDomain = createDomain();
