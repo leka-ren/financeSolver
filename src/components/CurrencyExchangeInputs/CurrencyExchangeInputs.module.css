@@ -36,6 +36,7 @@
 }
 
 .span {
+  top: -24px;
   position: absolute;
   font-family: "DotGothic16", Arial, Helvetica, sans-serif;
   font-size: 12px;
@@ -54,6 +55,7 @@
 }
 
 .inputContent {
+  position: relative;
   margin: 0;
   padding: 0;
   border-bottom: solid #ffe5e57d 1px;
@@ -66,4 +68,9 @@
   width: 415px;
   height: 44px;
   padding: 0;
+}
+
+.currencySelector {
+  position: absolute;
+  bottom: 12px;
 }

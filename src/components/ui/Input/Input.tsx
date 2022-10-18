@@ -6,9 +6,10 @@ import styles from "./Input.module.css";
 interface InputProps {
   classNames?: string;
   placeholder?: string;
-  value?: string;
+  value?: string | number;
   onChange?: () => void;
   number?: boolean;
+  disabled?: boolean;
 }
 
 const Input: ComponentType<InputProps> = ({
@@ -17,9 +18,11 @@ const Input: ComponentType<InputProps> = ({
   onChange,
   number = false,
   classNames,
+  disabled = false,
 }) => {
   return (
     <input
+      disabled={disabled}
       className={cx(styles.input, classNames)}
       placeholder={placeholder}
       value={value}

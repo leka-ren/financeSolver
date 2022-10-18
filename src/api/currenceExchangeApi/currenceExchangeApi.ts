@@ -1,16 +1,23 @@
 import { combine, createDomain } from "effector";
 
 import { $financeItems } from "../../api/financeItemsApi/financeItemsApi";
+
 // Domain
 const priceInformDomain = createDomain();
 
 // Events
-export const getEuro = priceInformDomain.createEvent<number | string>();
+export const getEuro = priceInformDomain.createEvent<string>();
 
 // Store
 export const $euro = priceInformDomain
-  .createStore<string | number>("")
-  .on(getEuro, (_, euro) => euro);
+  .createStore<string>("")
+  .on(getEuro, (_, e: any) => e.target.value);
+
+const $idrExchangeRate = priceInformDomain.createStore(15202.36);
+
+export const $idr = combine($euro, $idrExchangeRate, (EUR, IDR) =>
+  EUR ? ((Number(EUR) * IDR) / 1000000).toFixed(2) : 0
+);
 
 export const $allExpenses = combine($financeItems, (financeItems) => {
   const totalBalance = financeItems.reduce((acc: number, el) => {
@@ -18,12 +25,4 @@ export const $allExpenses = combine($financeItems, (financeItems) => {
     return acc;
   }, 0);
   return totalBalance;
-});
-
-const idrExchangeRate = 15202.36;
-
-export const $accountBalance = combine($euro, $allExpenses, (euro, allExp) => {
-  const idr = (Number(euro) * idrExchangeRate) / 1000000;
-  const balance = idr - allExp;
-  return balance;
 });
