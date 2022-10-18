@@ -1,14 +1,15 @@
 .input {
-  border-bottom: solid rgb(255, 229, 229) 1px;
   width: 100%;
-  border-radius: 0;
+  background-color: transparent;
+  border: none;
+  font-family: "DotGothic16", Arial, Helvetica, sans-serif;
 }
 
-/* .input::-webkit-outer-spin-button,
+.input::-webkit-outer-spin-button,
 .input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
-} */
+}
 
 input::placeholder {
   font-size: 11px;

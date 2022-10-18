@@ -1,12 +1,12 @@
 import { ComponentType, useEffect } from "react";
 
 import { pageLoad } from "../../api/pageLoad/pageLoad";
-import { FinanceList } from "../../components/FinanceList/FinanceList";
+import { FinanceList } from "../../oldComponents/FinanceList/FinanceList";
 import { Header } from "../Header/Header";
-import { Inputs } from "../../components/InputsAddNewItem/InputsAddNewItem";
-import { PriceInform } from "../../components/PriceInform/PriceInform";
+import { PriceInform } from "../../oldComponents/PriceInform/PriceInform";
 
 import style from "./General.module.css";
+import AddNewItem from "../AddNewItem/AddNewItem";
 
 export const General: ComponentType = () => {
   useEffect(() => {
@@ -16,9 +16,7 @@ export const General: ComponentType = () => {
   return (
     <div className={style.page}>
       <Header />
-      <Inputs />
-      <PriceInform />
-      <FinanceList />
+      <AddNewItem />
     </div>
   );
 };

@@ -1,7 +1,10 @@
-import { createDomain, guard } from "effector";
+import { createDomain, forward, guard } from "effector";
 
 import { FinanceItemProps } from "../../types/financeItemProps";
-import { getFinanceItemsEndpoint } from "../endponts/getFinanceItemsEndpoints";
+import {
+  getFinanceItemsEndpoint,
+  postFinanceItemEndpoint,
+} from "../endponts/apiFinanceItemsEndpoints";
 import { pageLoad } from "../pageLoad/pageLoad";
 
 // Domain
@@ -10,19 +13,25 @@ const financeItemsDomain = createDomain();
 // Events
 export const addFinanceItems =
   financeItemsDomain.createEvent<FinanceItemProps>();
-export const removeItem = financeItemsDomain.createEvent<string | number>();
+export const removeItem = financeItemsDomain.createEvent<string>();
 
 // Effects
 export const getFinanceItemsFx = financeItemsDomain.createEffect(
   getFinanceItemsEndpoint
 );
 
+export const postFinanceItemFx = financeItemsDomain.createEffect(
+  postFinanceItemEndpoint
+);
+
 // Store
 export const $financeItems = financeItemsDomain
   .createStore<FinanceItemProps[]>([])
   .on(getFinanceItemsFx.doneData, (_, data) => data.data)
-  .on(addFinanceItems, (store, newItem) => {
-    store.push(newItem);
+  .on(postFinanceItemFx.doneData, (store, newItem) => {
+    console.log(newItem);
+    //@ts-ignore
+    store.push(newItem.data);
     return [...store];
   })
   .on(removeItem, (store, id) => {
@@ -30,9 +39,15 @@ export const $financeItems = financeItemsDomain
     return [...updatedStore];
   });
 
+// Relations
 guard({
   clock: pageLoad,
   source: $financeItems,
   filter: (src, _) => !!(src.length === 0),
   target: getFinanceItemsFx,
+});
+
+forward({
+  from: addFinanceItems,
+  to: postFinanceItemFx,
 });

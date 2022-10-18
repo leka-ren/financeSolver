@@ -13,7 +13,7 @@ export const FinanceList: ComponentType = () => {
       {financeItems.length > 0 ? (
         financeItems.map((el) => (
           <FinanceItem
-            key={el.id}
+            key={el.id || Math.random().toString(36).substring(2)}
             category={el.category}
             price={el.price}
             id={el.id}

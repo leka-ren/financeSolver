@@ -1,5 +1,5 @@
 export interface FinanceItemProps {
-  id: string | number;
+  id?: string;
   category: string;
   price: string | number;
 }

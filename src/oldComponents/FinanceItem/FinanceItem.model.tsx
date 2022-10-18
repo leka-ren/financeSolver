@@ -10,11 +10,11 @@ export const financeItemPriceChange = financeItemChangeDomain.createEvent();
 // Event
 export const setChangeMod = financeItemChangeDomain.createEvent();
 export const itemPriceChange = financeItemChangeDomain.createEvent<{
-  id: string | number;
-  price: number | string;
+  id: string;
+  price: string;
 }>();
 export const itemCategoryChange = financeItemChangeDomain.createEvent<{
-  id: string | number;
+  id: string;
   category: string;
 }>();
 
