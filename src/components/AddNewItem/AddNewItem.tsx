@@ -9,27 +9,32 @@ import styles from "./AddNewItem.module.css";
 
 const AddNewItem: ComponentType = () => {
   return (
-    <div className={styles.content}>
-      <BlockTitle classNames={styles.item} title={"Расходы:"} />
-      <div className={cx(styles.inputsContent, styles.item)}>
-        <Input
-          classNames={styles.input}
-          onChange={setInputCategory}
-          placeholder="Категория"
-        />
-        <Input
-          classNames={styles.input}
-          number={true}
-          onChange={setInputPrice}
-          placeholder="Сумма"
-        />
+    <div className={styles.general}>
+      <BlockTitle
+        classNames={cx(styles.item, styles.title)}
+        title={"Расходы:"}
+      />
+      <div className={styles.content}>
+        <div className={cx(styles.inputsContent, styles.item)}>
+          <Input
+            classNames={styles.input}
+            onChange={setInputCategory}
+            placeholder="Категория"
+          />
+          <Input
+            classNames={styles.input}
+            number={true}
+            onChange={setInputPrice}
+            placeholder="Сумма"
+          />
+        </div>
+        <button
+          onClick={() => submit()}
+          className={cx(styles.button, styles.item)}
+        >
+          клик
+        </button>
       </div>
-      <button
-        onClick={() => submit()}
-        className={cx(styles.button, styles.item)}
-      >
-        клик
-      </button>
     </div>
   );
 };

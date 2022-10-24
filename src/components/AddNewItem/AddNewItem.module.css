@@ -1,8 +1,18 @@
+.general {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-top: 130px;
+}
+
 .content {
   width: 100%;
   display: flex;
   flex-direction: row;
-  margin-top: 130px;
+}
+
+.title {
+  width: 180px;
 }
 
 .item + .item {
@@ -45,4 +55,31 @@
 
 .input + .input {
   margin-left: 40px;
+}
+
+@media screen and (max-width: 500px) {
+  .content {
+    flex-direction: column;
+    width: 95%;
+    margin: 60px auto;
+  }
+
+  .inputsContent {
+    height: 50px;
+    margin-bottom: 55px;
+  }
+
+  .input {
+    width: 100%;
+  }
+
+  .item + .item {
+    margin: 0;
+    margin-top: 20px;
+  }
+
+  .button {
+    width: 99%;
+    transform: translate(-4px, 0);
+  }
 }
