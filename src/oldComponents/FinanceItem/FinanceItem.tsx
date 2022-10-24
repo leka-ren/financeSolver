@@ -4,7 +4,6 @@ import cx from "classnames";
 import { FinanceItemProps } from "../../types/financeItemProps";
 
 import style from "./FinanceItem.module.css";
-import { removeItem } from "../../api/financeItemsApi/financeItemsApi";
 
 export const FinanceItem: ComponentType<FinanceItemProps> = ({
   id,
@@ -15,7 +14,7 @@ export const FinanceItem: ComponentType<FinanceItemProps> = ({
     <div className={cx(style.item)}>
       <button
         className={cx(style.text, style.deleteBtn)}
-        onClick={() => id && removeItem(id)}
+        onClick={() => id && console.log(id)}
       ></button>
       <input
         disabled={true}

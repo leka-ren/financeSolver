@@ -12,3 +12,6 @@ export const postFinanceItemEndpoint = ({ ...data }: FinanceItemProps) => {
   };
   return axios.post(financeItemsUrl, res);
 };
+
+export const deleteFinanceItemsEndpoint = (id: string) =>
+  axios.delete(`${financeItemsUrl}/${id}`);
