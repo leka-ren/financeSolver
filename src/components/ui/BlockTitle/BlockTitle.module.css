@@ -21,4 +21,8 @@
   .content {
     width: 180px;
   }
+
+  .title {
+    font-size: 10px;
+  }
 }

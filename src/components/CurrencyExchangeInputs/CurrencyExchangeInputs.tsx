@@ -17,36 +17,38 @@ export const CurrencyExchangeInputs: ComponentType = () => {
 
   return (
     <div className={styles.content}>
-      <BlockTitle classNames={styles.item} title={"Введите сумму:"} />
-      <div className={styles.inputs}>
-        <span className={styles.span}>из:</span>
-        <div className={styles.inputContent}>
-          <CurrencySelector
-            classNames={styles.currencySelector}
-            currency={"EUR"}
-          />
-          <Input
-            onChange={getEuro}
-            value={euro}
-            classNames={styles.input}
-            placeholder="Сумма"
-            number
-          />
+      <BlockTitle classNames={styles.item} title={"Введите валюту:"} />
+      <div className={styles.inputsContent}>
+        <div className={styles.inputs}>
+          <span className={styles.span}>из:</span>
+          <div className={styles.inputContent}>
+            <CurrencySelector
+              classNames={styles.currencySelector}
+              currency={"EUR"}
+            />
+            <Input
+              onChange={getEuro}
+              value={euro}
+              classNames={styles.input}
+              placeholder="Валюта"
+              number
+            />
+          </div>
         </div>
-      </div>
-      <div className={styles.inputs}>
-        <span className={styles.span}>в:</span>
-        <div className={styles.inputContent}>
-          <CurrencySelector
-            classNames={styles.currencySelector}
-            currency={"IDR"}
-          />
-          <Input
-            disabled
-            classNames={styles.input}
-            placeholder="Сумма"
-            value={idr + " млн"}
-          />
+        <div className={styles.inputs}>
+          <span className={styles.span}>в:</span>
+          <div className={styles.inputContent}>
+            <CurrencySelector
+              classNames={styles.currencySelector}
+              currency={"IDR"}
+            />
+            <Input
+              disabled
+              classNames={styles.input}
+              placeholder="Сумма"
+              value={`${idr} ${idr > 0 ? "млн" : ""}`}
+            />
+          </div>
         </div>
       </div>
       {/* <button className={styles.button}>
