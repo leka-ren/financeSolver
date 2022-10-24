@@ -26,7 +26,7 @@
   margin-top: 95px;
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 770px) {
   .finanseItem {
     padding: 0 10px;
     margin-top: 95px;

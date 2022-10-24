@@ -9,6 +9,7 @@
   width: 100%;
   display: flex;
   flex-direction: row;
+  padding: 0 10px;
 }
 
 .item + .item {
@@ -16,7 +17,7 @@
 }
 
 .button {
-  width: 73px;
+  width: 20%;
   height: 45px;
   text-transform: uppercase;
   border: solid #ffe5e5 1px;
@@ -40,6 +41,7 @@
   display: flex;
   flex-direction: row;
   margin-left: 40px;
+  width: 100%;
 }
 
 .input {
@@ -47,14 +49,14 @@
   border-bottom: solid #ffe5e57d 1px;
   border-radius: 0;
   background-color: transparent;
-  width: 415px;
+  width: 100%;
 }
 
 .input + .input {
   margin-left: 40px;
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 770px) {
   .general {
     flex-direction: column;
   }
