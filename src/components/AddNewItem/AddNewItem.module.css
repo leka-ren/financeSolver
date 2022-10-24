@@ -1,7 +1,7 @@
 .general {
   width: 100%;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   margin-top: 130px;
 }
 
@@ -9,10 +9,6 @@
   width: 100%;
   display: flex;
   flex-direction: row;
-}
-
-.title {
-  width: 180px;
 }
 
 .item + .item {
@@ -43,6 +39,7 @@
 .inputsContent {
   display: flex;
   flex-direction: row;
+  margin-left: 40px;
 }
 
 .input {
@@ -58,6 +55,10 @@
 }
 
 @media screen and (max-width: 500px) {
+  .general {
+    flex-direction: column;
+  }
+
   .content {
     flex-direction: column;
     width: 95%;
@@ -66,7 +67,7 @@
 
   .inputsContent {
     height: 50px;
-    margin-bottom: 55px;
+    margin: 0 auto 55px;
   }
 
   .input {

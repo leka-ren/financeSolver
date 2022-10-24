@@ -16,3 +16,9 @@
   margin: 0;
   font-size: 15px;
 }
+
+@media screen and (max-width: 500px) {
+  .content {
+    width: 180px;
+  }
+}
