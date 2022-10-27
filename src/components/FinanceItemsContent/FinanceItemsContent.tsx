@@ -20,7 +20,7 @@ export const FinanceItemsContent: ComponentType = () => {
     <div className={styles.content}>
       <div className={styles.calculatingContent}>
         <p className={styles.text}>Всего трат: {allExpenses}</p>
-        <p className={styles.text}>Свободных денег: {balance}</p>
+        <p className={styles.text}>Свободных денег: {balance.toFixed(2)}</p>
       </div>
       {financeItems.length > 0 && (
         <div className={styles.finanseItem}>
