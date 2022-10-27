@@ -59,12 +59,13 @@
 @media screen and (max-width: 770px) {
   .general {
     flex-direction: column;
+    margin-top: 80px;
   }
 
   .content {
     flex-direction: column;
     width: 95%;
-    margin: 60px auto;
+    margin: 50px auto;
   }
 
   .inputsContent {

@@ -1,5 +1,7 @@
 import { useStore } from "effector-react";
 import { ComponentType } from "react";
+import cx from "classnames";
+
 import {
   $allExpenses,
   $balance,
@@ -20,17 +22,22 @@ export const FinanceItemsContent: ComponentType = () => {
         <p className={styles.text}>Всего трат: {allExpenses}</p>
         <p className={styles.text}>Свободных денег: {balance}</p>
       </div>
-      <div className={styles.finanseItem}>
-        {financeItems.map((el, i) => (
-          <FinanceItem
-            key={el.id}
-            id={el.id}
-            category={el.category}
-            price={el.price}
-            position={i + 1}
-          />
-        ))}
-      </div>
+      {financeItems.length > 0 && (
+        <div className={styles.finanseItem}>
+          {financeItems.map((el, i) => (
+            <FinanceItem
+              key={el.id}
+              id={el.id}
+              category={el.category}
+              price={el.price}
+              position={i + 1}
+            />
+          ))}
+        </div>
+      )}
+      {financeItems.length === 0 && (
+        <p className={cx(styles.text, styles.alertTitle)}>Добавь трату</p>
+      )}
     </div>
   );
 };

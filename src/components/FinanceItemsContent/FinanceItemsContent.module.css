@@ -26,6 +26,12 @@
   margin-top: 95px;
 }
 
+.alertTitle {
+  width: 100%;
+  text-align: center;
+  text-transform: uppercase;
+}
+
 @media screen and (max-width: 770px) {
   .finanseItem {
     padding: 0 10px;

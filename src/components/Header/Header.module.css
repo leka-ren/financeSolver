@@ -14,3 +14,9 @@
 .subtitle {
   opacity: 0.5;
 }
+
+@media screen and (max-width: 769px) {
+  .text {
+    text-align: center;
+  }
+}
