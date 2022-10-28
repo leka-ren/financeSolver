@@ -1,7 +1,7 @@
 import { ComponentType } from "react";
 import cx from "classnames";
 
-import DuckPick from "../../images/DuckPick.svg";
+import DuckPick from "../../images/DuckPickArrow.svg";
 
 import styles from "./CurrencySelector.module.css";
 
