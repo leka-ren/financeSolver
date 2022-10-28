@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/financeSolwer/static/css/main.15a611ed.css",
-    "main.js": "/financeSolwer/static/js/main.8081aa71.js",
+    "main.js": "/financeSolwer/static/js/main.869105b7.js",
     "static/media/DotGothic16-Regular.ttf": "/financeSolwer/static/media/DotGothic16-Regular.7317ef6fed091a7e2f39.ttf",
     "static/media/Trash.svg": "/financeSolwer/static/media/Trash.dfa75e3f973b5bb6439a8d59caa88306.svg",
-    "static/media/DuckPick.svg": "/financeSolwer/static/media/DuckPick.b6bff99378d354ef9f1af1bd2954e203.svg",
+    "static/media/DuckPickArrow.svg": "/financeSolwer/static/media/DuckPickArrow.b6bff99378d354ef9f1af1bd2954e203.svg",
     "index.html": "/financeSolwer/index.html",
     "main.15a611ed.css.map": "/financeSolwer/static/css/main.15a611ed.css.map",
-    "main.8081aa71.js.map": "/financeSolwer/static/js/main.8081aa71.js.map"
+    "main.869105b7.js.map": "/financeSolwer/static/js/main.869105b7.js.map"
   },
   "entrypoints": [
     "static/css/main.15a611ed.css",
-    "static/js/main.8081aa71.js"
+    "static/js/main.869105b7.js"
   ]
 }
