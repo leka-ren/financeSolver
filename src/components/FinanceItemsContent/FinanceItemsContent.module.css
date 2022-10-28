@@ -1,0 +1,40 @@
+.content {
+  margin-top: 105px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.calculatingContent {
+  padding: 0 60px;
+}
+
+.text {
+  font-size: 15px;
+  font-weight: 100;
+  color: #ffe5e5;
+  font-family: "DotGothic16", Arial, Helvetica, sans-serif;
+}
+
+.text + .text {
+  margin-top: 20px;
+}
+
+.finanseItem {
+  padding: 0 60px;
+  margin: 0;
+  margin-top: 95px;
+}
+
+.alertTitle {
+  width: 100%;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+@media screen and (max-width: 770px) {
+  .finanseItem {
+    padding: 0 10px;
+    margin-top: 95px;
+  }
+}

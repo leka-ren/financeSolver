@@ -3,14 +3,16 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  border-bottom: solid rgb(206, 206, 206) 1px;
-  width: 100%;
-  max-width: 500px;
+  border-bottom: solid #ffe5e5 1px;
+  width: 80%;
+  padding: 0 10px;
+  margin: 0 auto;
 }
 
 .text {
   font-family: "DotGothic16", Arial, Helvetica, sans-serif;
-  color: rgb(255, 229, 229);
+  font-weight: 100;
+  color: #ffe5e5;
   font-size: 15px;
 }
 
@@ -18,7 +20,6 @@
   padding: 10px 10px;
   background-color: transparent;
   border: none;
-  outline: none;
   width: 100%;
 }
 
@@ -33,7 +34,7 @@
 }
 
 .inputActive {
-  border: solid rgb(206, 206, 206) 1px;
+  border: solid #ffe5e5 1px;
 }
 
 .inputNumber {
@@ -41,11 +42,14 @@
   text-align: right;
 }
 
-.deleteBtn {
-  color: red;
+.button {
+  display: flex;
+  justify-content: center;
   border: none;
   background-color: transparent;
-  margin: 0;
+  margin: auto;
   padding: 0;
   cursor: pointer;
+  width: 50px;
+  height: 25px;
 }

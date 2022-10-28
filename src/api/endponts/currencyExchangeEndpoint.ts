@@ -6,7 +6,7 @@ interface GetCurrencyExchangeArgs {
   amound: string | number;
 }
 
-export const getCurrencyExchange = ({
+export const currencyExchangeEndpoint = ({
   from,
   to,
   amound,

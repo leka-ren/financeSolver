@@ -1,0 +1,28 @@
+.content {
+  display: flex;
+  flex-direction: row;
+  width: 360px;
+  height: 45px;
+  background-color: #1e1e1e;
+}
+
+.title {
+  align-self: center;
+  height: min-content;
+  font-family: "DotGothic16", Arial, Helvetica, sans-serif;
+  font-weight: 100;
+  color: #ffe5e5;
+  padding: 0 10px;
+  margin: 0;
+  font-size: 15px;
+}
+
+@media screen and (max-width: 770px) {
+  .content {
+    width: 180px;
+  }
+
+  .title {
+    font-size: 10px;
+  }
+}

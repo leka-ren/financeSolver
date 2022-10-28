@@ -6579,6 +6579,11 @@ path-type@^4.0.0:
   resolved "https://registry.yarnpkg.com/path-type/-/path-type-4.0.0.tgz#84ed01c0a7ba380afe09d90a8c180dcd9d03043b"
   integrity sha512-gDKb8aZMDeD/tZWs9P6+q0J9Mwkdl6xMV8TjnGP3qJVJ06bdMgkbBlLU8IdfOsIsFz2BW1rNVT3XuNEl8zPAvw==
 
+patronum@^1.12.2:
+  version "1.12.2"
+  resolved "https://registry.yarnpkg.com/patronum/-/patronum-1.12.2.tgz#7daaccfe702e7a29982db29d05e321472a194171"
+  integrity sha512-IVp4djypcs5NgIZdMaj1ggRkBUyPddnhMdka3bz4LGs2S/k9AjmhUhKiQYakmUASTmvv5CKWDFxTkm16dO5rhQ==
+
 performance-now@^2.1.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/performance-now/-/performance-now-2.1.0.tgz#6309f4e0e5fa913ec1c69307ae364b4b377c9e7b"

@@ -9,6 +9,9 @@
 body {
   margin: 0;
   padding: 0;
-  background-color: #005151;
-  color: rgb(255, 229, 229);
+  background-color: #205050;
+}
+
+input {
+  outline: none;
 }

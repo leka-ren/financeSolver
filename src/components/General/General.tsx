@@ -1,18 +1,24 @@
-import { ComponentType } from "react";
-import { FinanceList } from "../FinanceList/FinanceList";
+import { ComponentType, useEffect } from "react";
+
+import { pageLoad } from "../../api/pageLoad/pageLoad";
 import { Header } from "../Header/Header";
-import { Inputs } from "../InputsAddNewItem/InputsAddNewItem";
-import { PriceInform } from "../PriceInform/PriceInform";
 
 import style from "./General.module.css";
+import AddNewItem from "../AddNewItem/AddNewItem";
+import { CurrencyExchangeInputs } from "../CurrencyExchangeInputs/CurrencyExchangeInputs";
+import { FinanceItemsContent } from "../FinanceItemsContent/FinanceItemsContent";
 
 export const General: ComponentType = () => {
+  useEffect(() => {
+    pageLoad();
+  }, []);
+
   return (
     <div className={style.page}>
       <Header />
-      <Inputs />
-      <PriceInform />
-      <FinanceList />
+      <CurrencyExchangeInputs />
+      <AddNewItem />
+      <FinanceItemsContent />
     </div>
   );
 };
