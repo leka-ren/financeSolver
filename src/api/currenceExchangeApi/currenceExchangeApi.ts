@@ -22,7 +22,7 @@ export const $euro = currencyExchangeDomain
   .createStore<string>("")
   .on(getEuro, (_, e: any) => e.target.value);
 
-const $idrExchangeRate = currencyExchangeDomain.createStore(15202.36);
+const $idrExchangeRate = currencyExchangeDomain.createStore(16314.19);
 
 export const $idr = combine($euro, $idrExchangeRate, (EUR, IDR) =>
   EUR ? ((Number(EUR) * IDR) / 1000000).toFixed(2) : 0
