@@ -15,7 +15,6 @@ export const CurrencySelector: ComponentType<CurrencySelectorProps> = ({
   classNames,
   currency,
 }) => {
-
   return (
     <div className={cx(styles.content, classNames)}>
       <div className={styles.selectorContent}>
