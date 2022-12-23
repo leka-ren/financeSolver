@@ -9,7 +9,7 @@ import { CurrencySelector } from "../CurrencySelector/CurrencySelector";
 import { BlockTitle } from "../ui/BlockTitle/BlockTitle";
 import Input from "../ui/Input/Input";
 
-import styles from "./CurrencyExchangeInputs.module.css";
+import styles from "./CurrencyExchangeInputs.module.scss";
 
 export const CurrencyExchangeInputs: ComponentType = () => {
   const idr = useStore($idr);

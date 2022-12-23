@@ -3,7 +3,7 @@ import cx from "classnames";
 
 import DuckPick from "../../images/DuckPickArrow.svg";
 
-import styles from "./CurrencySelector.module.css";
+import styles from "./CurrencySelector.module.scss";
 
 interface CurrencySelectorProps {
   currency?: string;

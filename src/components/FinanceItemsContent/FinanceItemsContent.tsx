@@ -9,7 +9,7 @@ import {
 import { $financeItems } from "../../api/financeItemsApi/financeItemsApi";
 import { FinanceItem } from "../FinanceItem/FinanceItem";
 
-import styles from "./FinanceItemsContent.module.css";
+import styles from "./FinanceItemsContent.module.scss";
 
 export const FinanceItemsContent: ComponentType = () => {
   const allExpenses = useStore($allExpenses);

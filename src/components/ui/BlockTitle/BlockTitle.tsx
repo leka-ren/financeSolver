@@ -1,7 +1,7 @@
 import { ComponentType } from "react";
 import cx from "classnames";
 
-import styles from "./BlockTitle.module.css";
+import styles from "./BlockTitle.module.scss";
 
 interface BlockTitleProps {
   title: string;

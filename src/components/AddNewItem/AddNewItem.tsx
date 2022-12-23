@@ -5,7 +5,7 @@ import cx from "classnames";
 import Input from "../ui/Input/Input";
 import { setInputCategory, setInputPrice, submit } from "./AddNewItem.model";
 
-import styles from "./AddNewItem.module.css";
+import styles from "./AddNewItem.module.scss";
 
 const AddNewItem: ComponentType = () => {
   return (

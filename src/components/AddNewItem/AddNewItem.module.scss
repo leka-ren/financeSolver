@@ -3,6 +3,11 @@
   display: flex;
   flex-direction: row;
   margin-top: 130px;
+
+  @media (max-width: 770px) {
+    flex-direction: column;
+    margin-top: 80px;
+  }
 }
 
 .content {
@@ -10,10 +15,25 @@
   display: flex;
   flex-direction: row;
   padding: 0 10px;
+
+  @media (max-width: 770px) {
+    flex-direction: column;
+    width: 95%;
+    margin: 50px auto;
+  }
 }
 
-.item + .item {
-  margin-left: 40px;
+.item {
+  & + & {
+    margin-left: 40px;
+  }
+
+  @media (max-width: 770px) {
+    & + & {
+      margin: 0;
+      margin-top: 20px;
+    }
+  }
 }
 
 .button {
@@ -29,12 +49,17 @@
   font-family: "DotGothic16", Arial, Helvetica, sans-serif;
   font-weight: 100;
   font-size: 10px;
-}
 
-.button:hover {
-  transform: translate(1px, 1px);
-  box-shadow: 0px 0px rgba(0, 128, 128, 0);
-  transition: all 0.2s ease-in;
+  &:hover {
+    transform: translate(1px, 1px);
+    box-shadow: 0px 0px rgba(0, 128, 128, 0);
+    transition: all 0.2s ease-in;
+  }
+
+  @media (max-width: 770px) {
+    width: 99%;
+    transform: translate(-4px, 0);
+  }
 }
 
 .inputsContent {
@@ -42,6 +67,11 @@
   flex-direction: row;
   margin-left: 40px;
   width: 100%;
+
+  @media (max-width: 770px) {
+    height: 50px;
+    margin: 0 auto 55px;
+  }
 }
 
 .input {
@@ -50,40 +80,11 @@
   border-radius: 0;
   background-color: transparent;
   width: 100%;
-}
 
-.input + .input {
-  margin-left: 40px;
-}
-
-@media screen and (max-width: 770px) {
-  .general {
-    flex-direction: column;
-    margin-top: 80px;
+  & + & {
+    margin-left: 40px;
   }
-
-  .content {
-    flex-direction: column;
-    width: 95%;
-    margin: 50px auto;
-  }
-
-  .inputsContent {
-    height: 50px;
-    margin: 0 auto 55px;
-  }
-
-  .input {
+  @media (max-width: 770px) {
     width: 100%;
-  }
-
-  .item + .item {
-    margin: 0;
-    margin-top: 20px;
-  }
-
-  .button {
-    width: 99%;
-    transform: translate(-4px, 0);
   }
 }
