@@ -6,6 +6,13 @@
   src: url("./fonts/DotGothic16-Regular.ttf") format("truetype");
 }
 
+:root {
+  --brandColorRed: #ff6a6a;
+  --brandColorGreen: #205050;
+  --brandColorBlack: #1e1e1e;
+  --brandColorWhite: #ffe5e5;
+}
+
 body {
   margin: 0;
   padding: 0;
