@@ -21,16 +21,15 @@
   background-color: transparent;
   border: none;
   width: 100%;
-}
 
-.input:disabled {
-  opacity: 1;
-}
-
-.input::-webkit-outer-spin-button,
-.input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
+  &:disabled {
+    opacity: 1;
+  }
+  &::-webkit-outer-spin-button,
+  &::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
 }
 
 .inputActive {
