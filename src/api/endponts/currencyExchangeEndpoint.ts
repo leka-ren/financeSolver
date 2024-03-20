@@ -15,7 +15,7 @@ export const currencyExchangeEndpoint = ({
 
   return axios(apiCurrencyExchange, {
     headers: {
-      apikey: "",
+      apikey: "yI56o6WgSS0IloSAKUMQfchgfmeIHSsX",
       //   "yI56o6WgSS0IloSAKUMQfchgfmeIHSsX",
     },
   });

@@ -1,7 +1,9 @@
-import { combine, createDomain } from "effector";
+import { combine, createDomain, sample } from "effector";
 
 import { $financeItems } from "../../api/financeItemsApi/financeItemsApi";
 import { currencyNames } from "./const";
+import { pageLoad } from "../pageLoad/pageLoad";
+import { currencyExchangeEndpoint } from "../endponts/currencyExchangeEndpoint";
 
 // Domain
 const currencyExchangeDomain = createDomain();
@@ -14,6 +16,11 @@ export const setCurrencyTo = currencyExchangeDomain.createEvent<string[]>();
 export const removeCurrencyTo = currencyExchangeDomain.createEvent<string>();
 export const getExchange = currencyExchangeDomain.createEvent<string[]>();
 
+// Effects
+export const getCurrencyDataFx = currencyExchangeDomain.createEffect(
+  currencyExchangeEndpoint
+);
+
 // Store
 export const $availibleCurrency =
   currencyExchangeDomain.createStore(currencyNames);
@@ -22,7 +29,9 @@ export const $euro = currencyExchangeDomain
   .createStore<string>("")
   .on(getEuro, (_, e: any) => e.target.value);
 
-const $idrExchangeRate = currencyExchangeDomain.createStore(15202.36);
+const $idrExchangeRate = currencyExchangeDomain
+  .createStore(0)
+  .on(getCurrencyDataFx.doneData, (_, res) => res.data.result);
 
 export const $idr = combine($euro, $idrExchangeRate, (EUR, IDR) =>
   EUR ? ((Number(EUR) * IDR) / 1000000).toFixed(2) : 0
@@ -54,3 +63,14 @@ export const $currencyTo = currencyExchangeDomain
   .on(removeCurrencyTo, (store, currency) =>
     store.filter((el) => el !== currency)
   );
+
+// Relations
+sample({
+  clock: pageLoad,
+  fn: () => ({
+    from: "EUR",
+    to: "IDR",
+    amound: 1,
+  }),
+  target: getCurrencyDataFx,
+});
