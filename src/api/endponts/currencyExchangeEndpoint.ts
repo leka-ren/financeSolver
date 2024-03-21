@@ -12,11 +12,11 @@ export const currencyExchangeEndpoint = ({
   amound,
 }: GetCurrencyExchangeArgs) => {
   const apiCurrencyExchange = `https://api.apilayer.com/fixer/convert?to=${to}&from=${from}&amount=${amound}`;
+  const apikey = process.env.REACT_APP_API_CURRENCY_KEY || "";
 
   return axios(apiCurrencyExchange, {
     headers: {
-      apikey: "yI56o6WgSS0IloSAKUMQfchgfmeIHSsX",
-      //   "yI56o6WgSS0IloSAKUMQfchgfmeIHSsX",
+      apikey,
     },
   });
 };

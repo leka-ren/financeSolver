@@ -46,7 +46,7 @@ export const CurrencyExchangeInputs: ComponentType = () => {
               disabled
               classNames={styles.input}
               placeholder="Сумма"
-              value={`${idr} ${idr > 0 ? "млн" : ""}`}
+              value={`${idr} ${+idr > 0 ? "млн" : ""}`}
             />
           </div>
         </div>
