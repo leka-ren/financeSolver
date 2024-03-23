@@ -31,6 +31,9 @@ export const $euro = currencyExchangeDomain
 
 const $idrExchangeRate = currencyExchangeDomain
   .createStore(0)
+  .on(getCurrencyDataFx.failData, (_, err) => {
+    return 17000;
+  })
   .on(getCurrencyDataFx.doneData, (_, res) => res.data.result);
 
 export const $idr = combine($euro, $idrExchangeRate, (EUR, IDR) =>
