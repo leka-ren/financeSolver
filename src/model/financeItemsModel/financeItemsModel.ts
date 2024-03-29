@@ -1,12 +1,12 @@
-import { createDomain, forward, guard } from "effector";
+import { combine, createDomain, guard } from "effector";
 
 import { FinanceItemProps } from "../../types/financeItemProps";
 import {
   deleteFinanceItemsEndpoint,
   getFinanceItemsEndpoint,
   postFinanceItemEndpoint,
-} from "../endponts/apiFinanceItemsEndpoints";
-import { pageLoad } from "../pageLoad/pageLoad";
+} from "../../api/endponts/apiFinanceItemsEndpoints";
+import { pageLoad } from "../../api/pageLoad/pageLoad";
 
 // Domain
 const financeItemsDomain = createDomain();
@@ -32,6 +32,17 @@ export const deleteFinanceItemFx = financeItemsDomain.createEffect(
 // Store
 export const $financeItems = financeItemsDomain
   .createStore<FinanceItemProps[]>([])
+  .on(addFinanceItems, (store, item) => {
+    return [
+      ...store,
+      {
+        ...item,
+        id: String(Math.floor(Math.random() * 10000000) + 1),
+        date: new Date().toISOString().split("T")[0],
+      },
+    ];
+  })
+  .on(deleteFinanceItem, (store, id) => store.filter((el) => el.id !== id))
   .on(getFinanceItemsFx.doneData, (_, data) => data.data)
   .on(postFinanceItemFx.doneData, (store, newItem) => {
     store.push(newItem.data);
@@ -44,6 +55,14 @@ export const $financeItems = financeItemsDomain
     }
   });
 
+export const $expensesByCategory = combine($financeItems, (expenses) =>
+  expenses.reduce((acc, { category, price }) => {
+    // @ts-ignore
+    acc[category] = (acc[category] || 0) + price;
+    return acc;
+  }, {})
+);
+
 // Relations
 guard({
   clock: pageLoad,
@@ -52,12 +71,12 @@ guard({
   target: getFinanceItemsFx,
 });
 
-forward({
-  from: addFinanceItems,
-  to: postFinanceItemFx,
-});
+// forward({
+//   from: addFinanceItems,
+//   to: postFinanceItemFx,
+// });
 
-forward({
-  from: deleteFinanceItem,
-  to: deleteFinanceItemFx,
-});
+// forward({
+//   from: deleteFinanceItem,
+//   to: deleteFinanceItemFx,
+// });

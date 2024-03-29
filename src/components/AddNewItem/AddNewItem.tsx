@@ -3,7 +3,7 @@ import { BlockTitle } from "../ui/BlockTitle/BlockTitle";
 import cx from "classnames";
 
 import Input from "../ui/Input/Input";
-import { setInputCategory, setInputPrice, submit } from "./AddNewItem.model";
+import { setInputCategory, setInputPrice, submit } from "../../model/addNewItemModel/addNewItemModel";
 
 import styles from "./AddNewItem.module.scss";
 
