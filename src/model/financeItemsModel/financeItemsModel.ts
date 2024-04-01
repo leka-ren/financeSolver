@@ -58,7 +58,7 @@ export const $financeItems = financeItemsDomain
 export const $expensesByCategory = combine($financeItems, (expenses) =>
   expenses.reduce((acc, { category, price }) => {
     // @ts-ignore
-    acc[category] = (acc[category] || 0) + price;
+    acc[category] = (acc[category] || 0) + Number(price);
     return acc;
   }, {})
 );
