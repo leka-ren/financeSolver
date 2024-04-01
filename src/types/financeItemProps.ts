@@ -3,4 +3,6 @@ export interface FinanceItemProps {
   position?: number;
   category: string;
   price: string | number;
+  date?: string;
+  currency?: string;
 }

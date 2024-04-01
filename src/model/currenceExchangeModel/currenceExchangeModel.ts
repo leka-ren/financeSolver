@@ -1,7 +1,9 @@
 import { combine, createDomain } from "effector";
 
-import { $financeItems } from "../../api/financeItemsApi/financeItemsApi";
-import { currencyNames } from "./const";
+import { $financeItems } from "../financeItemsModel/financeItemsModel";
+
+// Const 
+export const currencyNames = ["eur", "idr"];
 
 // Domain
 const currencyExchangeDomain = createDomain();
@@ -22,7 +24,7 @@ export const $euro = currencyExchangeDomain
   .createStore<string>("")
   .on(getEuro, (_, e: any) => e.target.value);
 
-const $idrExchangeRate = currencyExchangeDomain.createStore(16314.19);
+const $idrExchangeRate = currencyExchangeDomain.createStore(17138);
 
 export const $idr = combine($euro, $idrExchangeRate, (EUR, IDR) =>
   EUR ? ((Number(EUR) * IDR) / 1000000).toFixed(2) : 0

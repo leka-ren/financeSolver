@@ -1,5 +1,5 @@
 import { combine, createDomain, sample } from "effector";
-import { addFinanceItems } from "../../api/financeItemsApi/financeItemsApi";
+import { addFinanceItems } from "../financeItemsModel/financeItemsModel";
 import { FinanceItemProps } from "../../types/financeItemProps";
 
 const addNewItemDomain = createDomain();

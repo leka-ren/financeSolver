@@ -5,7 +5,7 @@ import { FinanceItemProps } from "../../types/financeItemProps";
 import Trash from "../../images/Trash.svg";
 
 import styles from "./FinanceItem.module.scss";
-import { deleteFinanceItem } from "../../api/financeItemsApi/financeItemsApi";
+import { deleteFinanceItem } from "../../model/financeItemsModel/financeItemsModel";
 
 export const FinanceItem: ComponentType<FinanceItemProps> = ({
   id,
