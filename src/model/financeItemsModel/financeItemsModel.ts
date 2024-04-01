@@ -36,9 +36,7 @@ export const getFinanceItemsFxStorage = financeItemsDomain.createEffect(() => {
 // Store
 export const $financeItems = financeItemsDomain
   .createStore<FinanceItemProps[]>([])
-  .on(getFinanceItemsFxStorage.doneData, (_, items) => {
-    return items;
-  })
+  .on(getFinanceItemsFxStorage.doneData, (_, items) => items)
   .on(addFinanceItems, (store, item) => {
     const modifiedStore = [
       ...store,
