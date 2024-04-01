@@ -1,4 +1,4 @@
-import { combine, createDomain, guard } from "effector";
+import { combine, createDomain, forward } from "effector";
 
 import { FinanceItemProps } from "../../types/financeItemProps";
 import { pageLoad } from "../../api/pageLoad/pageLoad";
@@ -80,11 +80,9 @@ export const $expensesByCategory = combine($financeItems, (expenses) =>
 );
 
 // Relations
-guard({
-  clock: pageLoad,
-  source: $financeItems,
-  filter: (src, _) => !!(src.length === 0),
-  target: getFinanceItemsFxStorage,
+forward({
+  from: pageLoad,
+  to: getFinanceItemsFxStorage,
 });
 
 // in time while backend in dev
