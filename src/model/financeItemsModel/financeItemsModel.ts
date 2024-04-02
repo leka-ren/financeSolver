@@ -1,12 +1,10 @@
-import { combine, createDomain, guard } from "effector";
+import { combine, createDomain, forward } from "effector";
 
 import { FinanceItemProps } from "../../types/financeItemProps";
-import {
-  deleteFinanceItemsEndpoint,
-  getFinanceItemsEndpoint,
-  postFinanceItemEndpoint,
-} from "../../api/endponts/apiFinanceItemsEndpoints";
 import { pageLoad } from "../../api/pageLoad/pageLoad";
+
+// Const
+const STORAGE_KEY = "expenses";
 
 // Domain
 const financeItemsDomain = createDomain();
@@ -14,26 +12,33 @@ const financeItemsDomain = createDomain();
 // Events
 export const addFinanceItems =
   financeItemsDomain.createEvent<FinanceItemProps>();
+
 export const deleteFinanceItem = financeItemsDomain.createEvent<string>();
 
 // Effects
-export const getFinanceItemsFx = financeItemsDomain.createEffect(
-  getFinanceItemsEndpoint
-);
+// in time while backend in dev
+export const getFinanceItemsFxStorage = financeItemsDomain.createEffect(() => {
+  const data = localStorage.getItem(STORAGE_KEY);
+  return data ? JSON.parse(data) : [];
+});
 
-export const postFinanceItemFx = financeItemsDomain.createEffect(
-  postFinanceItemEndpoint
-);
-
-export const deleteFinanceItemFx = financeItemsDomain.createEffect(
-  deleteFinanceItemsEndpoint
-);
+// in time while backend in dev
+// export const getFinanceItemsFx = financeItemsDomain.createEffect(
+//   getFinanceItemsEndpoint
+// );
+// export const deleteFinanceItemFx = financeItemsDomain.createEffect(
+//   deleteFinanceItemsEndpoint
+// );
+// export const postFinanceItemFx = financeItemsDomain.createEffect(
+//   postFinanceItemEndpoint
+// );
 
 // Store
 export const $financeItems = financeItemsDomain
   .createStore<FinanceItemProps[]>([])
+  .on(getFinanceItemsFxStorage.doneData, (_, items) => items)
   .on(addFinanceItems, (store, item) => {
-    return [
+    const modifiedStore = [
       ...store,
       {
         ...item,
@@ -41,36 +46,44 @@ export const $financeItems = financeItemsDomain
         date: new Date().toISOString().split("T")[0],
       },
     ];
+
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(modifiedStore));
+    return modifiedStore;
   })
-  .on(deleteFinanceItem, (store, id) => store.filter((el) => el.id !== id))
-  .on(getFinanceItemsFx.doneData, (_, data) => data.data)
-  .on(postFinanceItemFx.doneData, (store, newItem) => {
-    store.push(newItem.data);
-    return [...store];
-  })
-  .on(deleteFinanceItemFx.doneData, (store, data) => {
-    if (data.data.id) {
-      const updatedStore = store.filter((el) => el.id !== data.data.id);
-      return [...updatedStore];
-    }
+  .on(deleteFinanceItem, (store, id) => {
+    const modifiedStore = store.filter((el) => el.id !== id);
+
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(modifiedStore));
+    return modifiedStore;
   });
+
+// in time while backend in dev
+// .on(deleteFinanceItem, (store, id) => store.filter((el) => el.id !== id))
+// .on(postFinanceItemFx.doneData, (store, newItem) => {
+//   store.push(newItem.data);
+//   return [...store];
+// })
+// .on(deleteFinanceItemFx.doneData, (store, data) => {
+//   if (data.data.id) {
+//     const updatedStore = store.filter((el) => el.id !== data.data.id);
+//     return [...updatedStore];
+//   }
+// });
 
 export const $expensesByCategory = combine($financeItems, (expenses) =>
   expenses.reduce((acc, { category, price }) => {
-    // @ts-ignore
     acc[category] = (acc[category] || 0) + Number(price);
     return acc;
-  }, {})
+  }, {} as { [key: string]: number })
 );
 
 // Relations
-guard({
-  clock: pageLoad,
-  source: $financeItems,
-  filter: (src, _) => !!(src.length === 0),
-  target: getFinanceItemsFx,
+forward({
+  from: pageLoad,
+  to: getFinanceItemsFxStorage,
 });
 
+// in time while backend in dev
 // forward({
 //   from: addFinanceItems,
 //   to: postFinanceItemFx,
