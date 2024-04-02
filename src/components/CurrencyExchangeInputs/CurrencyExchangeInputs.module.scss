@@ -15,11 +15,19 @@
 }
 
 .inputsContent {
-  padding: 40px;
   display: grid;
+  padding: 40px;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: 45px;
   grid-column-gap: 40px;
+
+  @media (max-width: 570px) {
+    display: grid;
+    padding: 40px;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(2, 1fr);
+    grid-row-gap: 40px;
+  }
 }
 
 .inputContent {
