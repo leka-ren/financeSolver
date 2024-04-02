@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/financeSolwer/static/css/main.3b6e75d5.css",
-    "main.js": "/financeSolwer/static/js/main.195f06c2.js",
-    "static/media/DotGothic16-Regular.ttf": "/financeSolwer/static/media/DotGothic16-Regular.7317ef6fed091a7e2f39.ttf",
-    "static/media/Trash.svg": "/financeSolwer/static/media/Trash.dfa75e3f973b5bb6439a8d59caa88306.svg",
-    "static/media/DuckPickArrow.svg": "/financeSolwer/static/media/DuckPickArrow.d3fae2b4d619f4563f6b9ee058f73ac2.svg",
-    "index.html": "/financeSolwer/index.html",
-    "main.3b6e75d5.css.map": "/financeSolwer/static/css/main.3b6e75d5.css.map",
-    "main.195f06c2.js.map": "/financeSolwer/static/js/main.195f06c2.js.map"
+    "main.css": "/financeSolver/static/css/main.25663b33.css",
+    "main.js": "/financeSolver/static/js/main.2dc5d7ba.js",
+    "static/media/DotGothic16-Regular.ttf": "/financeSolver/static/media/DotGothic16-Regular.7317ef6fed091a7e2f39.ttf",
+    "static/media/Trash.svg": "/financeSolver/static/media/Trash.dfa75e3f973b5bb6439a8d59caa88306.svg",
+    "static/media/DuckPickArrow.svg": "/financeSolver/static/media/DuckPickArrow.d3fae2b4d619f4563f6b9ee058f73ac2.svg",
+    "index.html": "/financeSolver/index.html",
+    "main.25663b33.css.map": "/financeSolver/static/css/main.25663b33.css.map",
+    "main.2dc5d7ba.js.map": "/financeSolver/static/js/main.2dc5d7ba.js.map"
   },
   "entrypoints": [
-    "static/css/main.3b6e75d5.css",
-    "static/js/main.195f06c2.js"
+    "static/css/main.25663b33.css",
+    "static/js/main.2dc5d7ba.js"
   ]
 }
