@@ -1,28 +1,9 @@
-.content {
-  display: flex;
-  flex-direction: row;
-  width: 360px;
-  height: 45px;
-  background-color: #2a2a2a;
-
-  @media (max-width: 770px) {
-    width: 180px;
-    font-size: 10px;
-  }
-}
-
 .title {
-  align-self: center;
-  height: min-content;
-  font-family: "DotGothic16", Arial, Helvetica, sans-serif;
-  font-weight: 100;
   color: #ffe5e5;
-  padding: 0 10px;
-  margin: 0;
-  font-size: 15px;
-
-  @media (max-width: 770px) {
-    width: 180px;
-    font-size: 10px;
-  }
+  font-family: "DotGothic16", Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  margin: 40px 0 0;
+  padding-left: 10px;
+  font-weight: 100;
+  text-transform: uppercase;
 }
