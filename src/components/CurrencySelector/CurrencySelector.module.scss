@@ -1,25 +1,17 @@
 .content {
   display: flex;
-  flex-direction: row;
-}
-
-.selectorContent {
-  padding: 4px 10px;
-  background-color: #198975b2;
-  display: flex;
-  flex-direction: row;
-}
-
-.img {
-  width: 15px;
-  padding: 0;
-  margin: 0;
+  // background-color: rgba(25, 137, 117, 0.698);
+  background-color: rgba(255, 229, 229, 0.4901960784);
+  width: fit-content;
+  height: 45px;
 }
 
 .currencyName {
-  padding: 0;
-  margin: 0;
-  margin-right: 10px;
+  align-self: center;
   font-family: "DotGothic16", Arial, Helvetica, sans-serif;
+  font-weight: 100;
   color: #ffe5e5;
+  padding: 0 15px;
+  margin: 0;
+  font-size: 15px;
 }
