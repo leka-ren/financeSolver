@@ -1,33 +1,32 @@
 import { ComponentType } from "react";
-import { BlockTitle } from "../ui/BlockTitle/BlockTitle";
 import cx from "classnames";
 
 import Input from "../ui/Input/Input";
-import { setInputCategory, setInputPrice, submit } from "./AddNewItem.model";
+import {
+  setInputCategory,
+  setInputPrice,
+  submit,
+} from "../../model/addNewItemModel/addNewItemModel";
 
-import styles from "./AddNewItem.module.css";
+import styles from "./AddNewItem.module.scss";
+import { BlockTitle } from "../ui/BlockTitle/BlockTitle";
 
 const AddNewItem: ComponentType = () => {
   return (
     <div className={styles.general}>
-      <BlockTitle
-        classNames={cx(styles.item, styles.title)}
-        title={"Расходы:"}
-      />
+      <BlockTitle title="Траты:" />
       <div className={styles.content}>
-        <div className={cx(styles.inputsContent, styles.item)}>
-          <Input
-            classNames={styles.input}
-            onChange={setInputCategory}
-            placeholder="Категория"
-          />
-          <Input
-            classNames={styles.input}
-            number={true}
-            onChange={setInputPrice}
-            placeholder="Сумма"
-          />
-        </div>
+        <Input
+          classNames={styles.input}
+          onChange={setInputCategory}
+          placeholder="Категория"
+        />
+        <Input
+          classNames={styles.input}
+          number={true}
+          onChange={setInputPrice}
+          placeholder="Сумма"
+        />
         <button
           onClick={() => submit()}
           className={cx(styles.button, styles.item)}

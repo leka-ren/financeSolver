@@ -1,13 +1,10 @@
 import { ComponentType } from "react";
-import style from "./Header.module.css";
-
-import cx from "classnames";
+import style from "./Header.module.scss";
 
 export const Header: ComponentType = () => {
   return (
     <div className={style.content}>
-      <h1 className={style.text}>Финансовый калькулятор</h1>
-      <p className={cx(style.text, style.subtitle)}>прости хоспаде</p>
+      <h1 className={style.title}>FinanceSolver</h1>
     </div>
   );
 };
