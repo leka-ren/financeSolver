@@ -29,7 +29,7 @@ export const CurrencyExchangeInputs: ComponentType = () => {
             value={euro}
             classNames={styles.input}
             placeholder="Валюта"
-            number
+            typeInput={"number"}
           />
         </div>
         <div className={styles.inputContent}>
