@@ -23,7 +23,7 @@ const AddNewItem: ComponentType = () => {
         />
         <Input
           classNames={styles.input}
-          number={true}
+          typeInput={"number"}
           onChange={setInputPrice}
           placeholder="Сумма"
         />

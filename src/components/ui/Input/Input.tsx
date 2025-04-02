@@ -8,15 +8,25 @@ interface InputProps {
   placeholder?: string;
   value?: string | number;
   onChange?: () => void;
-  number?: boolean;
   disabled?: boolean;
+  typeInput?: string;
 }
+
+const handleWheel = (e: React.WheelEvent<HTMLInputElement>) => {
+  e.currentTarget.blur();
+};
+
+const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+  if (e.key === "ArrowUp" || e.key === "ArrowDown") {
+    e.preventDefault();
+  }
+};
 
 const Input: ComponentType<InputProps> = ({
   placeholder,
   value,
   onChange,
-  number = false,
+  typeInput = "text",
   classNames,
   disabled = false,
 }) => {
@@ -27,7 +37,9 @@ const Input: ComponentType<InputProps> = ({
       placeholder={placeholder}
       value={value}
       onChange={onChange}
-      type={number ? "number" : "text"}
+      type={typeInput}
+      onKeyDown={handleKeyDown}
+      onWheel={handleWheel}
     />
   );
 };
